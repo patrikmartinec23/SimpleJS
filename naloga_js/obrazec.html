@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <hr />
+      <form method="get" novalidate onsubmit="return validate()">
+        <label for="name"><b>Username</b></label
+        ><br />
+        <input
+          onchange="checkUsername(this.value)"
+          type="text"
+          placeholder="Enter Username"
+          name="username"
+          id="username"
+          required
+        />
+        <p id="name"></p>
+        <br />
+
+        <label for="email"><b>Email</b></label> <br />
+        <input
+          onchange="validateEmail(this.value)"
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          id="email"
+          required
+        />
+        <p id="mail"></p>
+        <br />
+
+        <label for="psw"><b>Password</b></label> <br />
+        <input
+          onchange="checkpsw(this.value)"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          id="password1"
+          required
+        />
+        <p id="password"></p>
+        <br />
+
+        <label for="psw-repeat"><b>Repeat Password</b></label> <br />
+        <input
+          onchange="checkp(this.value, document.getElementById('password1').value)"
+          type="password"
+          placeholder="Repeat Password"
+          name="psw-repeat"
+          id="psw-repeat"
+          required
+        />
+        <p id="psw_check"></p>
+        <br />
+
+        <label for="gender"><b>Select Gender</b></label> <br />
+        <input
+          onclick="clean()"
+          type="radio"
+          id="male"
+          name="gender"
+          value="Male"
+          class="gender"
+        />
+        <label for="male"><b>Male</b></label>
+        <input
+          onclick="clean()"
+          type="radio"
+          id="female"
+          name="gender"
+          value="Female"
+          class="gender"
+        />
+        <label for="female"><b>Female</b></label> <br />
+        <p id="zadno"></p>
+        <button onclick="validate()" type="submit" class="registerbtn">
+          Register
+        </button>
+      </form>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
